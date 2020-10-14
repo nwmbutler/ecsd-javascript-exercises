@@ -34,19 +34,40 @@ function Shop(name, location, currency, inventory) {
   this.inventory = inventory;
 
   this.isAvailable = (index) => {
-    // Code here...
+    return this.inventory[index].available ? "In stock" : "Out of stock"
+  }
+  
+  this.addItem = (name, price, avail) => {
+    this.inventory.push({ name: name, price: price, available: avail })
   }
 
-  // Code here...
+  this.search = (query) => {
+    this.inventory.forEach((product) => {
+      if(product.name.match(query)) {
+        console.log(product.name)
+      }
+    })
+    console.log("\n")
+  }
+
+  this.listAvailableInventory = () => {
+    this.inventory.forEach((product) => {
+      if(product.available) {
+        console.log(product.name + ": " + product.price)
+      }
+    })
+    console.log("\n")
+  }
 }
 
 const shop = new Shop("Happy Goods", "London - Old Street", "Sterling (£)", inventory);
 
-console.log(`Is a Sharp Soda available? ==> ${shop.isAvailable(3)}`);
+console.log(`Is a Sharp Soda available? ==> ${shop.isAvailable(3)}` + "\n");
 
-// shop.addItem("Tomato Soup", 1.25, true);
-// console.log(`Is the new item available? ==> ${shop.isAvailable(5)}`);
+shop.addItem("Tomato Soup", 1.25, true);
 
-// shop.search("S");
+console.log(`Is the new item available? ==> ${shop.isAvailable(5)}` + "\n");
 
-// shop.listAvailableInventory();
+shop.search("S");
+
+shop.listAvailableInventory();
