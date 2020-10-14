@@ -1,6 +1,6 @@
 // Switch
 
-let animal = "DOG"
+let animal = "Snake"
 
 switch(animal.toLowerCase()) {
   case "dog":
