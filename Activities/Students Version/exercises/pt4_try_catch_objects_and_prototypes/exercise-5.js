@@ -1,5 +1,9 @@
 function Factory(blueprint) {
-  // Code here...
+  return buildBluePrint(blueprint);
+}
+
+const buildBluePrint = (blueprint) => {
+  return new blueprint
 }
 
 function Car() {
@@ -21,3 +25,8 @@ function Plane() {
 }
 
 // Write code here to test your implementation of the Factory Prototype.
+car = Factory(Car)
+car.drive()
+
+fighterJet = Factory(Plane)
+fighterJet.fly()
