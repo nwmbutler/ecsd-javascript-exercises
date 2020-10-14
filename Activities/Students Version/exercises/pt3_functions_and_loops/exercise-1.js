@@ -23,7 +23,7 @@ console.log("b) Before function was called: " + array2);
 
 const f2 = () => {
     let i = 0;
-    while (i < 5) {
+    while (i < array2.length) {
       array2[i]--;
       i++; 
     }
@@ -39,9 +39,11 @@ let array3 = [425, 229, 182, 42, 390];
 console.log("c) The values within array3: " + array3);
 
 const f3 = (arr) => {
-    arr.forEach((num) => {
-        return num;
-      });
+  newArr = []
+  arr.forEach((num) => {
+  newArr.push(num * 2);
+  });
+  return newArr
 }
 
 console.log("The return of f3 on array3: " + f3(array3));
