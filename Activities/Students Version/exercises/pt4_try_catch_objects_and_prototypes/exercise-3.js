@@ -64,7 +64,7 @@ const search = (query) => {
       console.log(product.name)
     }
   })
-  npm
+  console.log("\n")
 }
 
 // Uncomment line below to test
@@ -80,7 +80,6 @@ const listAvailableInventory = () => {
   })
   console.log("\n")
 }
-
 // Uncomment line below to test
 listAvailableInventory();
 
